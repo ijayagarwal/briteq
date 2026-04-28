@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-w-screen: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-navy-900 font-body antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: #D946A8;
+  color: white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0E2E;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6D28D9, #D946A8);
+  border-radius: 999px;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-magenta-400 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-purple-600 to-magenta-500 text-white shadow-glow hover:scale-[1.02] hover:shadow-[0_0_70px_-5px_rgba(217,70,168,0.7)];
+  }
+
+  .btn-secondary {
+    @apply btn border border-navy-800/20 bg-white text-navy-900 hover:border-magenta-400 hover:text-magenta-500;
+  }
+
+  .btn-outline-light {
+    @apply btn border border-white/30 bg-white/5 text-white backdrop-blur hover:bg-white/15 hover:border-white/60;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-lg shadow-emerald-500/30 hover:bg-[#1ebe5a] hover:scale-[1.02];
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-magenta-400/30 bg-magenta-400/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-magenta-500;
+  }
+
+  .pill-light {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/80 backdrop-blur;
+  }
+
+  .heading-display {
+    @apply font-display font-extrabold tracking-tight;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-magenta-400 to-magenta-500 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply rounded-2xl border border-navy-800/10 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-glow hover:-translate-y-1 hover:border-magenta-400/40;
+  }
+
+  .card-dark {
+    @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition-all duration-300 hover:border-magenta-400/50 hover:bg-white/10;
+  }
+}
+
+@layer utilities {
+  .led-bg {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(147, 51, 234, 0.25), transparent 40%),
+      radial-gradient(circle at 80% 30%, rgba(217, 70, 168, 0.25), transparent 40%),
+      radial-gradient(circle at 50% 100%, rgba(109, 40, 217, 0.3), transparent 50%),
+      linear-gradient(135deg, #0A0820 0%, #0F0E2E 50%, #1E1B4B 100%);
+  }
+
+  .led-dots-bg {
+    background-image: radial-gradient(circle, rgba(217, 70, 168, 0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
