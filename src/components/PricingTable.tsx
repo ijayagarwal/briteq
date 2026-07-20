@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, MessageCircle, Star } from "lucide-react";
+import { Check, Lock, MessageCircle, Star } from "lucide-react";
 import { PricingPlan, planInquiryMessage } from "@/lib/pricing";
 import { whatsappLink } from "@/lib/site";
 
@@ -73,11 +73,15 @@ export default function PricingTable({ plans, variant = "billboard" }: Props) {
               )}
             </div>
 
-            <div className="mt-6 flex items-baseline gap-1">
-              <span className={`heading-display text-4xl ${isPopular ? "text-white" : "text-navy-900"}`}>
-                {plan.priceLabel}
+            <div className="mt-6 flex items-center gap-2">
+              <Lock className={`h-5 w-5 ${isPopular ? "text-magenta-300" : "text-magenta-500"}`} />
+              <span className={`heading-display text-2xl ${isPopular ? "text-white" : "text-navy-900"}`}>
+                Custom Pricing
               </span>
             </div>
+            <p className={`mt-1 text-sm ${isPopular ? "text-white/70" : "text-navy-900/60"}`}>
+              Tailored to your brand & campaign.
+            </p>
 
             <ul
               className={`mt-6 space-y-2.5 text-sm ${
@@ -107,7 +111,7 @@ export default function PricingTable({ plans, variant = "billboard" }: Props) {
               }`}
             >
               <MessageCircle className="h-4 w-4" />
-              Book This Plan
+              Reveal Price
             </a>
           </div>
         );

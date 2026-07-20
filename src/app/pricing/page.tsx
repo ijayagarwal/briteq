@@ -62,7 +62,7 @@ export default function PricingPage() {
             <span className="text-gradient">every brand & budget.</span>
           </>
         }
-        description="Pick a billboard-only plan, or combine it with social media management for total reach."
+        description="Pick a billboard-only plan, or combine it with social media management for total reach. Every plan is priced for your brand — tap Reveal Price to get a custom quote on WhatsApp."
       />
 
       {/* Tabs */}
@@ -101,6 +101,7 @@ export default function PricingPage() {
                   <li>Each ad runs for <strong>30 to 45 seconds</strong>.</li>
                   <li>Maximum <strong>4 to 10 ads per slot</strong>, depending on the package.</li>
                   <li>Bring your own creative — or we'll design it for an additional charge.</li>
+                  <li>Pricing is <strong>custom for every brand</strong> — tap <strong>Reveal Price</strong> on any plan to get your quote on WhatsApp.</li>
                 </ul>
               </div>
             </div>

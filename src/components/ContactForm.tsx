@@ -14,7 +14,7 @@ export default function ContactForm() {
     () =>
       allPlans.map((p) => ({
         id: p.id,
-        label: `${planLabel(p)} — ${p.priceLabel}`,
+        label: planLabel(p),
       })),
     []
   );
@@ -27,7 +27,7 @@ export default function ContactForm() {
       ``,
       `My name is ${name || "[Name]"}.`,
       selected
-        ? `I'm interested in: ${planLabel(selected)} (${selected.priceLabel}).`
+        ? `I'm interested in: ${planLabel(selected)}. Please share the pricing.`
         : `I'd like to know more about your services.`,
       ``,
       message ? `${message}` : `Please share more details.`,

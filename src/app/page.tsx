@@ -213,11 +213,11 @@ export default function HomePage() {
             eyebrow="Featured Plans"
             title={
               <>
-                Transparent pricing.{" "}
+                Custom pricing.{" "}
                 <span className="text-gradient">Built for every budget.</span>
               </>
             }
-            description="From a quick weekly ad to a full year of social-media-plus-billboard coverage. See the full lineup on our pricing page."
+            description="From a quick weekly ad to a full year of social-media-plus-billboard coverage. Every plan is quoted for your brand — tap Reveal Price to get yours on WhatsApp."
           />
           <div className="mt-14">
             <PricingTable plans={featured} />
