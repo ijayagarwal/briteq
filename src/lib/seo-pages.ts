@@ -18,12 +18,12 @@ export const servicePages: ServicePageData[] = [
   {
     slug: "digital-billboard-advertising",
     name: "Digital Billboard Advertising",
-    title: "Digital Billboard Advertising in Jharkhand | BRITEQ",
+    title: "Digital Billboard Advertising in Giridih | BRITEQ",
     description:
-      "Plan digital billboard campaigns in Jharkhand with location guidance, campaign-ready creative and flexible schedules. Request a custom BRITEQ plan.",
-    h1: "Digital billboard advertising across Jharkhand",
+      "Explore BRITEQ digital LED billboard plans at KB Sahay Chowk, Giridih, with flexible schedules, 30-45 second ads and custom WhatsApp quotes.",
+    h1: "Digital LED billboard advertising in Giridih",
     lede:
-      "Turn busy routes and high-attention locations into real-world brand presence. BRITEQ helps plan the placement, message, creative and schedule as one campaign.",
+      "Put your business on BRITEQ's documented screen at KB Sahay Chowk. Choose an established schedule, prepare a focused creative and request current slot pricing on WhatsApp.",
     promise: "Be seen in the real world—and give people a reason to remember you.",
     outcomes: [
       { title: "Local awareness", description: "Build recognition around the places your audience already moves through." },
@@ -32,18 +32,19 @@ export const servicePages: ServicePageData[] = [
     ],
     deliverables: [
       "Campaign objective and audience definition",
-      "Location and inventory guidance",
-      "Schedule and duration planning",
+      "KB Sahay Chowk display planning",
+      "Weekly, alternate-day and regular schedules",
       "Billboard-ready creative direction",
-      "30–45 second digital ad support",
+      "30-45 second digital ad support",
       "Optional social and creator amplification",
     ],
-    fit: ["Retail launches", "Restaurants", "Real estate", "Education", "Events", "Local services"],
+    fit: ["Shops & retail", "Local services", "Events", "Restaurants", "Education", "Real estate"],
     boundary:
-      "Billboard availability and final pricing depend on city, location, inventory, campaign dates and creative requirements. BRITEQ confirms these in a written proposal before launch.",
+      "Slot availability and final pricing depend on the selected schedule, rotation, campaign dates and creative requirements. Brands can provide finished content; BRITEQ creative production is quoted separately when required.",
     faqs: [
-      { question: "How long can a digital billboard ad be?", answer: "Current BRITEQ digital billboard formats support 30–45 second ads, subject to the selected inventory and schedule." },
-      { question: "Can BRITEQ design the billboard creative?", answer: "Yes. Creative can be scoped as part of the campaign so the message is readable, focused and suited to the screen format." },
+      { question: "How long can a digital billboard ad be?", answer: "Current BRITEQ digital billboard formats support 30-45 second ads, subject to the selected slot and schedule." },
+      { question: "Can BRITEQ design the billboard creative?", answer: "Yes. You can provide finished content, or BRITEQ can quote creative production separately so the ad is readable and suited to the screen." },
+      { question: "Which billboard plans are available?", answer: "Options include weekly and selected-day plans, alternate-day plans, regular plans, customizable hourly slots, and combined social media plus billboard terms. Current pricing is confirmed on WhatsApp." },
       { question: "Can a billboard campaign run with social media?", answer: "Yes. Outdoor, social and creator activity can be planned around one message and launch window." },
     ],
     related: ["creative-design", "social-media-management", "digital-marketing"],

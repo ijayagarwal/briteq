@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:sites": "next build && node scripts/stage-sites-build.mjs",
+    "build": "next build && node scripts/finalize-static-export.mjs",
+    "build:sites": "npm run build && node scripts/stage-sites-build.mjs",
     "start": "node scripts/serve-static.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CircleHelp, Sparkles } from "lucide-react";
+import BillboardPlans from "@/components/BillboardPlans";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
@@ -77,6 +78,8 @@ export default function ServiceDetailPage({ service }: { service: ServicePageDat
           </div>
         </div>
       </section>
+
+      {service.slug === "digital-billboard-advertising" && <BillboardPlans />}
 
       <section className="section-pad bg-ink text-white">
         <div className="container-shell">

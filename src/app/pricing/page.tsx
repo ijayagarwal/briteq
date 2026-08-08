@@ -57,6 +57,20 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-ink text-white">
+        <div className="container-shell grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <span className="eyebrow-dark">Established billboard plans</span>
+            <h2 className="section-title mt-6">Weekly, alternate-day, regular and combined options.</h2>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/72">BRITEQ&apos;s documented Giridih billboard menu is now listed in full without public prices. Choose the schedule that fits, then ask for current availability and a WhatsApp quote.</p>
+          </div>
+          <div className="lg:justify-self-end">
+            <Link href="/digital-billboard-advertising#billboard-plans" className="button-primary w-full sm:w-fit">View all billboard plans <ArrowUpRight className="h-4 w-4" /></Link>
+            <p className="mt-4 max-w-sm text-xs leading-5 text-white/65">Includes 7 AM to 7 PM and 7 AM to 11 PM schedules, plus customizable hourly slots.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad border-y border-ink/15 bg-white">
         <div className="container-shell grid gap-12 lg:grid-cols-[.65fr_1.35fr]">
           <div><span className="eyebrow">How your quote works</span><h2 className="section-title mt-6">Every cost has a clear job.</h2></div>
