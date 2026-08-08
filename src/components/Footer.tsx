@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { services } from "@/lib/content";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -56,6 +56,9 @@ export default function Footer() {
           <div className="mt-6 flex gap-2">
             <a href={site.instagramUrl} target="_blank" rel="noreferrer" aria-label="BRITEQ on Instagram" className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition hover:border-acid hover:bg-acid hover:text-ink">
               <Instagram className="h-4 w-4" />
+            </a>
+            <a href={site.linkedinUrl} target="_blank" rel="noreferrer" aria-label="BRITEQ on LinkedIn" className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition hover:border-acid hover:bg-acid hover:text-ink">
+              <Linkedin className="h-4 w-4" />
             </a>
           </div>
         </div>

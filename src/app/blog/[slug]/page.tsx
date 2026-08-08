@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import JsonLd from "@/components/JsonLd";
 import { blogPosts, getBlogPost } from "@/lib/blog";
-import { site } from "@/lib/site";
+import { routeUrl, site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: Props) {
     description: post.description,
     datePublished: post.published,
     dateModified: post.published,
-    mainEntityOfPage: `${site.url}/blog/${post.slug}`,
+    mainEntityOfPage: routeUrl(`blog/${post.slug}`),
     image: `${site.url}/og.jpg`,
     author: { "@type": "Organization", "@id": `${site.url}/#organization`, name: site.name },
     publisher: { "@id": `${site.url}/#organization` },

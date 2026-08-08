@@ -34,7 +34,7 @@ import {
   services,
   workFormats,
 } from "@/lib/content";
-import { pageOpenGraph, site, whatsappLink } from "@/lib/site";
+import { pageOpenGraph, routeUrl, site, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "BRITEQ | Jharkhand's Complete Marketing Partner" },
@@ -63,7 +63,7 @@ const homeSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${site.url}/#webpage`,
-  url: site.url,
+  url: routeUrl(),
   name: "BRITEQ | Jharkhand's Complete Marketing Partner",
   description: site.description,
   isPartOf: { "@id": `${site.url}/#website` },

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "BRITEQ — Jharkhand's Complete Marketing Partner",
@@ -10,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#F4F2EC",
     theme_color: "#0B0B12",
     icons: [
-      { src: "/icon", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icon.png", sizes: "512x512", type: "image/png", purpose: "any" },
     ],
   };
 }

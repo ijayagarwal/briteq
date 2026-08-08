@@ -5,10 +5,10 @@ import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
 import { services } from "@/lib/content";
 import type { LocationPageData } from "@/lib/locations";
-import { site } from "@/lib/site";
+import { routeUrl, site } from "@/lib/site";
 
 export default function LocationDetailPage({ location }: { location: LocationPageData }) {
-  const pageUrl = `${site.url}/${location.slug}`;
+  const pageUrl = routeUrl(location.slug);
   const schema = [
     {
       "@context": "https://schema.org",
@@ -25,7 +25,7 @@ export default function LocationDetailPage({ location }: { location: LocationPag
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+        { "@type": "ListItem", position: 1, name: "Home", item: routeUrl() },
         { "@type": "ListItem", position: 2, name: `Marketing in ${location.city}`, item: pageUrl },
       ],
     },

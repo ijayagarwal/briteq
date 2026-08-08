@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import PageHero from "@/components/PageHero";
 import { industries, process, services } from "@/lib/content";
 import type { ServicePageData } from "@/lib/seo-pages";
-import { site } from "@/lib/site";
+import { routeUrl, site } from "@/lib/site";
 
 export default function ServiceDetailPage({ service }: { service: ServicePageData }) {
   const related = services.filter((item) => service.related.includes(item.slug));
@@ -13,10 +13,10 @@ export default function ServiceDetailPage({ service }: { service: ServicePageDat
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": `${site.url}/${service.slug}#service`,
+      "@id": `${routeUrl(service.slug)}#service`,
       name: service.name,
       description: service.description,
-      url: `${site.url}/${service.slug}`,
+      url: routeUrl(service.slug),
       provider: { "@id": `${site.url}/#business` },
       areaServed: { "@type": "State", name: "Jharkhand" },
       serviceType: service.name,
@@ -25,9 +25,9 @@ export default function ServiceDetailPage({ service }: { service: ServicePageDat
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-        { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
-        { "@type": "ListItem", position: 3, name: service.name, item: `${site.url}/${service.slug}` },
+        { "@type": "ListItem", position: 1, name: "Home", item: routeUrl() },
+        { "@type": "ListItem", position: 2, name: "Services", item: routeUrl("services") },
+        { "@type": "ListItem", position: 3, name: service.name, item: routeUrl(service.slug) },
       ],
     },
   ];

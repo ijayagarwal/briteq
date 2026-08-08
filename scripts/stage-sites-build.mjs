@@ -2,7 +2,8 @@ import { access, cp, mkdir, rm } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
 const projectRoot = process.cwd();
-const openNext = resolve(projectRoot, ".open-next");
+const staticExport = resolve(projectRoot, "out");
+const staticWorker = resolve(projectRoot, "worker", "static-site.js");
 const dist = resolve(projectRoot, "dist");
 const server = resolve(dist, "server");
 const client = resolve(dist, "client");
@@ -12,17 +13,16 @@ if (dirname(dist) !== projectRoot) {
 }
 
 await rm(dist, { recursive: true, force: true });
-await mkdir(dist, { recursive: true });
-await cp(openNext, server, { recursive: true });
-await cp(resolve(openNext, "worker.js"), resolve(server, "index.js"));
-await cp(resolve(openNext, "assets"), client, { recursive: true });
+await mkdir(server, { recursive: true });
+await cp(staticExport, client, { recursive: true });
+await cp(staticWorker, resolve(server, "index.js"));
 
 for (const required of [
   resolve(server, "index.js"),
-  resolve(server, "cloudflare", "images.js"),
-  resolve(server, "middleware", "handler.mjs"),
+  resolve(client, "index.html"),
+  resolve(client, "404.html"),
 ]) {
   await access(required);
 }
 
-console.log("Sites staging ready in dist/.");
+console.log("Static Sites staging ready in dist/.");

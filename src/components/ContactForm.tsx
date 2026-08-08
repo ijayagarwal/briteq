@@ -51,7 +51,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form action={whatsappLink()} method="get" target="_blank" onSubmit={handleSubmit} className="rounded-[1.75rem] border border-ink/20 bg-white p-5 shadow-crisp sm:p-8">
+    <form onSubmit={handleSubmit} className="rounded-[1.75rem] border border-ink/20 bg-white p-5 shadow-crisp sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="text-sm font-semibold text-ink">
           Your name
@@ -97,7 +97,7 @@ export default function ContactForm() {
       <p className="mt-4 text-xs leading-5 text-ink/65" aria-live="polite">
         {submitted ? "Your project brief has opened in WhatsApp." : "Your details are used only to prepare the WhatsApp message. Nothing is stored on this website."}
       </p>
-      <noscript><p className="mt-3 text-xs text-ink/65">JavaScript is off. Submitting will still open BRITEQ on WhatsApp, but you may need to paste your project details.</p></noscript>
+      <noscript><p className="mt-3 text-xs text-ink/65">JavaScript is off. Please use the WhatsApp button on this page to contact BRITEQ directly.</p></noscript>
     </form>
   );
 }

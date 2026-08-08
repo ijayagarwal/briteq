@@ -18,10 +18,12 @@ export const metadata: Metadata = {
 };
 
 const liveReels = [
-  { id: "DWfcnu-E52Y", label: "Campaign reel 01", focus: "Outdoor showcase" },
-  { id: "DVOz2z4E9OP", label: "Campaign reel 02", focus: "BRITEQ in action" },
-  { id: "DVEhzTck3Qy", label: "Campaign reel 03", focus: "On-screen creative" },
-  { id: "DUbTOjTk5BO", label: "Campaign reel 04", focus: "Campaign moment" },
+  { id: "DXtMvqBEzbA", label: "Institution story", focus: "Education video" },
+  { id: "DWfcnu-E52Y", label: "Automotive creative", focus: "Yamaha XSR155 feature" },
+  { id: "DVOz2z4E9OP", label: "Showroom campaign", focus: "Marble & interiors" },
+  { id: "DVEhzTck3Qy", label: "Furniture campaign", focus: "Design & comfort" },
+  { id: "DUbTOjTk5BO", label: "Celebration billboard", focus: "Personal occasions" },
+  { id: "DYt2KbrzYpo", label: "Billboard in action", focus: "Local outdoor reach" },
 ];
 
 export default function PortfolioPage() {

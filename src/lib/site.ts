@@ -13,6 +13,7 @@ export const site = {
   whatsappNumber: "917461958873",
   instagramUrl: "https://www.instagram.com/briteq_in/",
   instagramHandle: "@briteq_in",
+  linkedinUrl: "https://www.linkedin.com/company/briteqin",
   address: {
     line1: "1st Floor, Hotel Blue Whale",
     line2: "Sitalpur, Giridih",
@@ -42,6 +43,11 @@ export function whatsappLink(message?: string): string {
 
 export function absoluteUrl(path = ""): string {
   return new URL(path, site.url).toString();
+}
+
+export function routeUrl(path = ""): string {
+  const route = path.replace(/^\/+|\/+$/g, "");
+  return route ? `${site.url}/${route}/` : `${site.url}/`;
 }
 
 export const socialImage = {

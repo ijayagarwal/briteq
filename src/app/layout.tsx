@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   category: "Marketing",
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/icon",
-    apple: "/icon",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   keywords: [
     "marketing agency Jharkhand",
@@ -100,7 +100,7 @@ const organizationSchema = {
       logo: absoluteUrl("/briteq-logo.png"),
       email: site.email,
       telephone: site.phoneHref,
-      sameAs: [site.instagramUrl],
+      sameAs: [site.instagramUrl, site.linkedinUrl],
     },
     {
       "@type": "ProfessionalService",
