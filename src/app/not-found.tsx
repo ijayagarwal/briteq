@@ -1,25 +1,18 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden led-bg">
-      <div className="absolute inset-0 led-dots-bg opacity-30" />
-      <div className="container-x relative text-center">
-        <p className="font-display text-7xl font-extrabold text-gradient sm:text-9xl">
-          404
-        </p>
-        <h1 className="heading-display mt-4 text-3xl text-white sm:text-4xl">
-          Page not found
-        </h1>
-        <p className="mx-auto mt-3 max-w-md text-white/70">
-          The page you're looking for doesn't exist. Let's get you back to the
-          screen.
-        </p>
-        <Link href="/" className="btn-primary mt-8">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
-        </Link>
+    <section className="relative grid min-h-[72svh] place-items-center overflow-hidden bg-ink py-20 text-white">
+      <div className="absolute inset-0 grid-fade opacity-50" />
+      <div className="container-shell relative text-center">
+        <p className="font-display text-[clamp(7rem,24vw,18rem)] font-bold leading-[.7] tracking-[-.1em] text-acid">404</p>
+        <h1 className="mt-12 font-display text-4xl font-bold tracking-[-.05em] sm:text-6xl">This route missed the audience.</h1>
+        <p className="mx-auto mt-5 max-w-lg text-base leading-7 text-white/60">The page may have moved, but the next useful step is still easy to find.</p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link href="/" className="button-primary"><ArrowLeft className="h-4 w-4" /> Back home</Link>
+          <Link href="/services" className="button-light">Explore services <ArrowRight className="h-4 w-4" /></Link>
+        </div>
       </div>
     </section>
   );

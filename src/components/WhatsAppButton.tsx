@@ -1,23 +1,17 @@
-"use client";
-
 import { MessageCircle } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={whatsappLink("Hi BRITEQ, I'd like to know more about your services.")}
+      href={whatsappLink("Hi BRITEQ, I'd like to explore a marketing plan for my business.")}
       target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-2xl shadow-emerald-500/40 transition-all hover:scale-105 hover:bg-[#1ebe5a] sm:bottom-6 sm:right-6"
+      rel="noreferrer"
+      aria-label="Start a WhatsApp conversation with BRITEQ"
+      className="group fixed bottom-4 right-4 z-40 flex min-h-12 items-center gap-2 rounded-full border-2 border-ink bg-[#25D366] px-4 py-3 font-display text-sm font-bold text-ink shadow-crisp-sm transition hover:-translate-y-1 hover:shadow-crisp sm:bottom-6 sm:right-6"
     >
-      <span className="relative flex h-3 w-3">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-60" />
-        <span className="relative inline-flex h-3 w-3 rounded-full bg-white" />
-      </span>
-      <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">Chat on WhatsApp</span>
+      <MessageCircle className="h-5 w-5" aria-hidden="true" />
+      <span className="hidden sm:inline">WhatsApp us</span>
     </a>
   );
 }

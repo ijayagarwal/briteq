@@ -1,108 +1,111 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Clock, Instagram, MessageCircle, Facebook, Phone } from "lucide-react";
+import { ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { services } from "@/lib/content";
 import { site, whatsappLink } from "@/lib/site";
+
+const companyLinks = [
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/industries", label: "Industries" },
+  { href: "/blog", label: "Insights" },
+  { href: "/pricing", label: "Plans" },
+  { href: "/contact", label: "Contact" },
+  { href: "/privacy-policy", label: "Privacy" },
+  { href: "/terms-and-conditions", label: "Terms" },
+];
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-navy-950 text-white">
-      <div className="absolute inset-0 led-dots-bg opacity-40 pointer-events-none" />
-      <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-purple-600/20 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-magenta-500/20 blur-3xl pointer-events-none" />
-
-      <div className="container-x relative py-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-2">
-            <div className="rounded-xl bg-white/95 p-3 inline-block">
-              <Image
-                src="/briteq-logo.png"
-                alt="BRITEQ"
-                width={180}
-                height={54}
-                className="h-12 w-auto"
-              />
-            </div>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/70">
-              {site.tagline}. Premium digital LED screen advertising at Giridih's busiest
-              junction — KB Sahay Chowk. Ground-level reach, day and night.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={whatsappLink("Hi BRITEQ, I'd like to know more about your services.")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp
-              </a>
-              <a
-                href={site.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-light"
-              >
-                <Instagram className="h-4 w-4" />
-                Instagram
-              </a>
-              <a
-                href={site.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-light"
-              >
-                <Facebook className="h-4 w-4" />
-                Facebook
-              </a>
-            </div>
-          </div>
-
+    <footer className="overflow-hidden bg-ink text-white">
+      <div className="border-b border-white/15">
+        <div className="container-shell grid gap-8 py-14 lg:grid-cols-[1.5fr_1fr] lg:items-end lg:py-20">
           <div>
-            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
-              Quick Links
-            </h4>
-            <ul className="mt-5 space-y-3 text-sm text-white/70">
-              <li><Link href="/" className="hover:text-magenta-400">Home</Link></li>
-              <li><Link href="/about" className="hover:text-magenta-400">About</Link></li>
-              <li><Link href="/services" className="hover:text-magenta-400">Services</Link></li>
-              <li><Link href="/pricing" className="hover:text-magenta-400">Pricing</Link></li>
-              <li><Link href="/contact" className="hover:text-magenta-400">Contact</Link></li>
-            </ul>
+            <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-acid">Have a growth goal?</p>
+            <h2 className="mt-4 max-w-4xl font-display text-[clamp(2.7rem,6vw,6rem)] font-bold leading-[0.9] tracking-[-0.065em]">
+              Let&apos;s make it<br />impossible to ignore.
+            </h2>
           </div>
+          <div className="flex flex-col gap-3 lg:items-end">
+            <Link href="/contact" className="button-primary w-full sm:w-fit">
+              Book a free consultation
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <a
+              href={whatsappLink("Hi BRITEQ, I'd like to discuss a marketing plan for my business.")}
+              target="_blank"
+              rel="noreferrer"
+              className="button-light w-full sm:w-fit"
+            >
+              Start on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
 
-          <div>
-            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
-              Reach Us
-            </h4>
-            <ul className="mt-5 space-y-4 text-sm text-white/70">
-              <li className="flex gap-3">
-                <Phone className="h-5 w-5 shrink-0 text-magenta-400" />
-                <a href={`tel:+917461958873`} className="hover:text-magenta-400">
-                  {site.phone}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <Mail className="h-5 w-5 shrink-0 text-magenta-400" />
-                <a href={`mailto:${site.email}`} className="hover:text-magenta-400 break-all">
-                  {site.email}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <MapPin className="h-5 w-5 shrink-0 text-magenta-400" />
-                <span>{site.address.full}</span>
-              </li>
-              <li className="flex gap-3">
-                <Clock className="h-5 w-5 shrink-0 text-magenta-400" />
-                <span>{site.hours} (Daily)</span>
-              </li>
-            </ul>
+      <div className="container-shell grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:py-20">
+        <div>
+          <span className="inline-block rounded-xl bg-white p-2.5">
+            <span className="brand-logo-crop">
+              <Image src="/briteq-logo.png" alt="BRITEQ" width={188} height={53} />
+            </span>
+          </span>
+          <p className="mt-5 max-w-sm text-sm leading-6 text-white/65">
+            Jharkhand&apos;s complete marketing partner—bringing strategy, creative, media and technology into one practical growth plan.
+          </p>
+          <div className="mt-6 flex gap-2">
+            <a href={site.instagramUrl} target="_blank" rel="noreferrer" aria-label="BRITEQ on Instagram" className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition hover:border-acid hover:bg-acid hover:text-ink">
+              <Instagram className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} BRITEQ. All rights reserved.</p>
-          <p>Illuminate Your Brand, Digitally.</p>
+        <div>
+          <h3 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/65">Services</h3>
+          <ul className="mt-5 space-y-3 text-sm text-white/72">
+            {services.map((service) => (
+              <li key={service.slug}>
+                <Link href={`/${service.slug}`} className="transition hover:text-acid">{service.shortName}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <div>
+          <h3 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/65">Service areas</h3>
+          <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-white/72 lg:grid-cols-1">
+            {site.serviceAreas.map((city) => {
+              const hasPage = ["Giridih", "Ranchi", "Dhanbad", "Bokaro", "Jamshedpur", "Deoghar"].includes(city);
+              return <li key={city}>{hasPage ? <Link href={`/${city.toLowerCase()}`} className="transition hover:text-acid">{city}</Link> : city}</li>;
+            })}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/65">Company</h3>
+          <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-white/72 lg:grid-cols-1">
+            {companyLinks.map((item) => <li key={item.href}><Link href={item.href} className="transition hover:text-acid">{item.label}</Link></li>)}
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-y border-white/15">
+        <div className="container-shell grid divide-y divide-white/15 md:grid-cols-3 md:divide-x md:divide-y-0">
+          <a href={`tel:${site.phoneHref}`} className="flex items-center gap-3 py-5 text-sm text-white/72 transition hover:text-acid md:px-6 md:first:pl-0">
+            <Phone className="h-4 w-4" /> {site.phone}
+          </a>
+          <a href={`mailto:${site.email}`} className="flex items-center gap-3 py-5 text-sm text-white/72 transition hover:text-acid md:px-6">
+            <Mail className="h-4 w-4" /> {site.email}
+          </a>
+          <div className="flex items-center gap-3 py-5 text-sm leading-5 text-white/72 md:px-6 md:last:pr-0">
+            <MapPin className="h-4 w-4 shrink-0" /> {site.address.full}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-shell flex flex-col gap-2 pb-28 pt-6 text-xs text-white/65 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} BRITEQ. All rights reserved.</p>
+        <p>Based in Giridih · Built for businesses across Jharkhand</p>
       </div>
     </footer>
   );

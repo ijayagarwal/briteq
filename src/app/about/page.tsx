@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { MapPin, Heart, Eye, Sparkles, Repeat } from "lucide-react";
-import PageHero from "@/components/PageHero";
+import Link from "next/link";
+import { ArrowUpRight, Eye, Handshake, Layers3, MapPin, Scale, Sparkles } from "lucide-react";
 import CTASection from "@/components/CTASection";
-import { site } from "@/lib/site";
+import PageHero from "@/components/PageHero";
+import { pageOpenGraph, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "BRITEQ helps Giridih businesses stand out through high-impact LED screen promotions and smart brand visibility solutions.",
+    "BRITEQ is a full-service marketing agency based in Giridih, bringing outdoor, digital, creative and technology together for businesses across Jharkhand.",
+  alternates: { canonical: "/about" },
+  openGraph: pageOpenGraph(
+    "About BRITEQ",
+    "BRITEQ is a full-service marketing agency based in Giridih, bringing outdoor, digital, creative and technology together for businesses across Jharkhand.",
+    "/about"
+  ),
 };
 
 export default function AboutPage() {
@@ -15,162 +22,73 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About BRITEQ"
-        title={
-          <>
-            Premium digital advertising,{" "}
-            <span className="text-gradient">made for Giridih.</span>
-          </>
-        }
-        description="We help local businesses, shops, services, and events stand out — with consistent exposure, professional visuals, and meaningful reach."
+        title={<>Marketing works better when <span className="text-acid">every channel works together.</span></>}
+        description="BRITEQ is a full-service marketing agency based in Giridih. We combine local outdoor visibility with digital reach, brand systems, content and technology."
+        cta={{ href: "/contact", label: "Meet your marketing partner" }}
       />
 
-      {/* Story */}
-      <section className="bg-white py-20 md:py-28">
-        <div className="container-x">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="pill">Our Story</span>
-              <h2 className="heading-display mt-4 text-3xl text-navy-900 sm:text-4xl">
-                A simple idea: make local brands{" "}
-                <span className="text-gradient">impossible to miss.</span>
-              </h2>
-              <div className="mt-6 space-y-4 text-base leading-relaxed text-navy-900/75">
-                <p>
-                  BRITEQ began with the belief that the best brand growth comes
-                  from being seen — every day, in the right place, looking sharp.
-                  Outdoor LED screens give businesses something traditional ads
-                  rarely deliver: real-world presence at the heart of their city.
-                </p>
-                <p>
-                  We're set up at <strong>KB Sahay Chowk</strong>, Giridih's busiest
-                  junction. From there, we help businesses combine ground-level LED
-                  visibility with online presence through social media — so brands
-                  show up consistently, online and offline.
-                </p>
-                <p>
-                  Our mission is simple: <em>illuminate your brand, digitally.</em>
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative aspect-square overflow-hidden rounded-3xl border border-navy-800/10 bg-navy-900 shadow-glow">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80"
-                  alt="Vibrant illuminated lights"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-navy-900/80 via-purple-700/55 to-magenta-500/70 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center">
-                  <p className="text-xs font-bold uppercase tracking-[0.3em] text-white/85">
-                    Mission
-                  </p>
-                  <p className="mt-4 font-display text-3xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-4xl">
-                    Illuminate Your Brand,
-                  </p>
-                  <p className="font-display text-3xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-4xl">
-                    Digitally.
-                  </p>
-                  <p className="mt-6 max-w-xs text-sm text-white/90">
-                    Consistent exposure. Professional visuals. Meaningful reach.
-                  </p>
+      <section className="section-pad bg-white">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+          <div className="lg:sticky lg:top-28">
+            <span className="eyebrow">Our role</span>
+            <h2 className="section-title mt-6">One accountable team from first idea to launch.</h2>
+          </div>
+          <div className="lg:pt-16">
+            <p className="font-display text-2xl font-semibold leading-tight tracking-[-0.035em] text-ink/85 sm:text-3xl">Whether you need one campaign or ongoing support, BRITEQ builds the scope around your goals, audience and budget.</p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {[
+                { icon: Eye, title: "See the whole journey", copy: "From first attention to final enquiry, every touchpoint has a purpose." },
+                { icon: Layers3, title: "Connect every channel", copy: "The strategy, message and creative stay coherent across outdoor and digital." },
+                { icon: Scale, title: "Right-size the scope", copy: "Start with the smallest useful plan, then add complexity only when it earns its place." },
+                { icon: Handshake, title: "Work with clarity", copy: "Scope, timelines, approvals and boundaries are visible before the work begins." },
+              ].map(({ icon: Icon, title, copy }) => (
+                <div key={title} className="rounded-[1.5rem] border border-ink/20 bg-paper p-6">
+                  <Icon className="h-6 w-6 text-electric" />
+                  <h3 className="mt-7 font-display text-xl font-bold tracking-tight">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-ink/60">{copy}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-gradient-to-b from-white to-magenta-400/[0.04] py-20 md:py-28">
-        <div className="container-x">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="pill">What We Stand For</span>
-            <h2 className="heading-display mt-4 text-3xl text-navy-900 sm:text-4xl md:text-5xl">
-              Four principles that{" "}
-              <span className="text-gradient">guide every campaign.</span>
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Eye,
-                title: "Visibility",
-                desc: "If they can't see you, they can't choose you. We make sure your brand is front-and-centre.",
-              },
-              {
-                icon: Repeat,
-                title: "Consistency",
-                desc: "Daily exposure builds memory. Showing up every day is what makes a brand recognisable.",
-              },
-              {
-                icon: Sparkles,
-                title: "Quality",
-                desc: "Sharp creative, modern LED tech, and clean visuals — your ad looks premium, every time.",
-              },
-              {
-                icon: Heart,
-                title: "Reach",
-                desc: "From the street to the screen — outdoor LED + social media gives real, measurable presence.",
-              },
-            ].map((v) => (
-              <div key={v.title} className="card">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-purple-600 to-magenta-500 text-white shadow-glow">
-                  <v.icon className="h-5 w-5" />
-                </div>
-                <h3 className="heading-display mt-4 text-lg text-navy-900">{v.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-900/70">{v.desc}</p>
-              </div>
-            ))}
+      <section className="section-pad overflow-hidden border-y border-ink/15 bg-acid">
+        <div className="container-shell">
+          <span className="eyebrow">Our belief</span>
+          <blockquote className="mt-8 max-w-6xl font-display text-[clamp(2.6rem,6vw,6.5rem)] font-bold leading-[0.93] tracking-[-0.065em]">
+            A business should not need five disconnected vendors to tell one clear story.
+          </blockquote>
+          <div className="mt-10 grid gap-6 border-t-2 border-ink pt-6 md:grid-cols-3">
+            <p className="font-display text-xs font-bold uppercase tracking-[.15em]">Strategy · Creative · Media · Technology</p>
+            <p className="text-sm leading-6 text-ink/65 md:col-span-2">BRITEQ exists to make the work simpler: understand the growth problem, choose the right channels, build the assets, launch with discipline and improve using the evidence available.</p>
           </div>
         </div>
       </section>
 
-      {/* Location */}
-      <section className="bg-white py-20 md:py-24">
-        <div className="container-x">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span className="pill">
-                <MapPin className="h-3.5 w-3.5" />
-                Visit Us
-              </span>
-              <h2 className="heading-display mt-4 text-3xl text-navy-900 sm:text-4xl">
-                Find us in Giridih.
-              </h2>
-              <p className="mt-4 text-base text-navy-900/75">
-                Drop by our office, or reach our LED screen at KB Sahay Chowk.
-              </p>
-              <div className="mt-6 rounded-2xl border border-navy-800/10 bg-white p-6">
-                <p className="text-xs font-bold uppercase tracking-wider text-magenta-500">
-                  Office Address
-                </p>
-                <p className="mt-2 font-display text-lg text-navy-900">
-                  {site.address.line1}
-                </p>
-                <p className="text-navy-900/75">{site.address.line2}</p>
-                <p className="text-navy-900/75">{site.address.state}</p>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-navy-800/10 shadow-md">
-              <iframe
-                src={site.mapsEmbed}
-                className="h-full min-h-[360px] w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="BRITEQ Office Location"
-              />
+      <section className="section-pad bg-ink text-white">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <div>
+            <span className="eyebrow-dark"><MapPin className="h-3.5 w-3.5" /> Giridih, Jharkhand</span>
+            <h2 className="section-title mt-6">Built locally. Ambitious for the whole state.</h2>
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/65">Our office is in Giridih. Digital services can support businesses statewide; outdoor and on-ground work is confirmed against city, inventory and campaign dates.</p>
+            <Link href="/giridih" className="button-primary mt-8">Explore Giridih services <ArrowUpRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="rounded-[1.75rem] border border-white/15 bg-white/[0.05] p-7 sm:p-10">
+            <div className="flex items-center justify-between"><span className="font-display text-xs font-bold uppercase tracking-[.14em] text-acid">BRITEQ office</span><Sparkles className="h-5 w-5 text-magenta" /></div>
+            <address className="mt-10 not-italic">
+              <p className="font-display text-3xl font-bold leading-tight tracking-[-0.04em]">{site.address.line1}<br />{site.address.line2}</p>
+              <p className="mt-3 text-sm text-white/65">{site.address.state}, {site.address.country}</p>
+            </address>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <a href={`tel:${site.phoneHref}`} className="button-light">Call {site.phone}</a>
+              <a href={`mailto:${site.email}`} className="button-light">Email BRITEQ</a>
             </div>
           </div>
         </div>
       </section>
 
-      <CTASection
-        title="Let's put your brand on the screen."
-        description="Whether you have a campaign in mind or just want to learn more, we'd love to talk."
-      />
+      <CTASection eyebrow="Work with BRITEQ" title="Bring the goal. We'll help shape the plan." />
     </>
   );
 }
